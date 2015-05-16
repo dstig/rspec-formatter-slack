@@ -1,15 +1,13 @@
 # Rspec::Formatter::Slack
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec/formatter/slack`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+RSpec3 formatter that notifies failed/pending examples and summary to Slack.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rspec-formatter-slack'
+gem 'rspec-formatter-slack', :group => :test
 ```
 
 And then execute:
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add following line to `.rspec` file in your project
+
+```
+--formatter RSpec::Formatter::Slack
+```
+
+And add configurations (Slack WebHook URL, etc) to `spec/spec_helper.rb` file in your project
+
+```
+RSpec.configuration.add_setting xxx
+```
 
 ## Development
 
@@ -32,7 +40,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/rspec-formatter-slack/fork )
+1. Fork it ( https://github.com/minimum2scp/rspec-formatter-slack/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
